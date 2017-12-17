@@ -30,7 +30,14 @@ public class Programa implements Serializable {
     private String codigo;
 
     @OneToMany(mappedBy = "programa", fetch = FetchType.LAZY)
-    private List<Curso> cursos;
+    private List<Programa> programa;
+    
+    public Programa(Long id) {
+        this.id = id;
+    }
+
+    public Programa() {
+    }
 
     public Long getId() {
         return id;
@@ -64,12 +71,12 @@ public class Programa implements Serializable {
         this.codigo = codigo;
     }
 
-    public List<Curso> getCursos() {
-        return cursos;
+    public List<Programa> getPrograma() {
+        return programa;
     }
 
-    public void setCursos(List<Curso> cursos) {
-        this.cursos = cursos;
+    public void setPrograma(List<Programa> programa) {
+        this.programa = programa;
     }
 
 }
